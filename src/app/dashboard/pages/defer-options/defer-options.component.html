@@ -1,0 +1,34 @@
+<app-title title="Defer options" />
+
+<section class="grid grid-col-1 md:grid-cols-2 gap-3">
+    <div class="bg-white rounded shadow p-10">
+        @defer (on interaction) {
+            <p>On interaction</p>
+        } @placeholder {
+            <p>Interact with me</p>
+        }
+    </div>
+    <div class="bg-white rounded shadow p-10">
+        <button #btnInteraction>CLICK ME!</button>
+        @defer (on interaction(btnInteraction)) {
+            <p>On interaction</p>
+        } @placeholder {
+            <p>Interact with me</p>
+        }
+    </div>
+    <div class="bg-white rounded shadow p-10">
+        <button #btnInteraction2>HOVER ME!</button>
+        @defer (on hover(btnInteraction2)) {
+            <p>On interaction</p>
+        } @placeholder {
+            <p>Interact with me</p>
+        }
+    </div>
+    <div class="bg-white rounded shadow p-10">
+        @defer (on immediate) {
+            <p>On interaction</p>
+        } @placeholder {
+            <p>Interact with me</p>
+        }
+    </div>
+</section>
